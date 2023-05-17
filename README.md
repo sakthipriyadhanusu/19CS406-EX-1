@@ -53,6 +53,7 @@ s.send("acknowledgement recived from the server".encode())
 
 OUTPUT:
 ![Screenshot from 2023-04-05 15-38-24](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/3c3f91f8-db6f-45e6-b2fa-ddf8cad37f50)
+![Screenshot from 2023-04-05 15-38-24](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/42d947ac-7b52-445a-af4b-fc85ca19545d)
 
 RESULT:
 Thus, the program to implement socket programming date and time display from client to

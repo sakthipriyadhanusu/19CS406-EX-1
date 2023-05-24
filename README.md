@@ -30,20 +30,25 @@ Client:
 
 PROGRAM :
 CLIENT:
+# Developed by : SAKTHI PRIYA D
+# Register Number : 212222040139
 import socket
+from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
-address={"165.165.80.80":"6A:08:AA:C2","165.165.79.1":"8A:BC:E3:FA"};
-while True:
-ip=c.recv(1024).decode()
-try:
-c.send(address[ip].encode())
-except KeyError:
-c.send("Not Found".encode())
+print("Client Address : ",addr)
+now = datetime.now()
+c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
+ack=c.recv(1024).decode()
+if ack:
+    print(ack)
+    c.close()
 
 SERVER:
+# Developed by : SAKTHI PRIYA D
+# Register Number : 212222040139
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
@@ -52,8 +57,12 @@ print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 
 OUTPUT:
-![Screenshot from 2023-04-05 15-38-24](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/3c3f91f8-db6f-45e6-b2fa-ddf8cad37f50)
-![Screenshot from 2023-04-05 15-38-24](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/42d947ac-7b52-445a-af4b-fc85ca19545d)
+CLIENT:
+![1a](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/28af897b-055b-46ab-bf05-b7dcd5b8d5aa)
+
+SERVER:
+![1b](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/40fb2b64-ad30-4078-a3d9-8faa93f7d6b5)
+
 
 RESULT:
 Thus, the program to implement socket programming date and time display from client to

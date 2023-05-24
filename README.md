@@ -63,7 +63,6 @@ CLIENT:
 SERVER:
 ![1b](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/40fb2b64-ad30-4078-a3d9-8faa93f7d6b5)
 
-
 RESULT:
 Thus, the program to implement socket programming date and time display from client to
 server using TCP Sockets was successfully executed.

@@ -31,8 +31,8 @@ Client:
 
 PROGRAM :
 CLIENT:
-# Developed by : SAKTHI PRIYA D
-# Register Number : 212222040139
+Developed by : SAKTHI PRIYA D
+Register Number : 212222040139
 import socket
 s=socket.socket()
 s.bind(('localhost',8000))
@@ -48,8 +48,8 @@ while True:
 
 
 SERVER:
-# Developed by : SAKTHI PRIYA D
-# Register Number : 212222040139
+Developed by : SAKTHI PRIYA D
+ Register Number : 212222040139
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))

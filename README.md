@@ -20,31 +20,32 @@ Server:
 9. Stop.
 
 Client:
-1. Create a client socket and connect it to the server‟s port number.
-2. Retrieve its own IP address using built-in function.
-3. Send its address to the server.
-4. Display the date & time sent by the server.
-5. Close the input and output streams.
-6. Close the client socket.
-7. Stop.
+1.Create a client socket and connect it to the server‟s port number.
+2.Retrieve its own IP address using built-in function.
+3.Send its address to the server.
+4.Display the date & time sent by the server.
+5.Close the input and output streams.
+6.Close the client socket.
+7.Stop.
+
 
 PROGRAM :
 CLIENT:
 # Developed by : SAKTHI PRIYA D
 # Register Number : 212222040139
 import socket
-from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
-print("Client Address : ",addr)
-now = datetime.now()
-c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
-ack=c.recv(1024).decode()
-if ack:
-    print(ack)
-    c.close()
+address={"165.165.80.80":"6A:08:AA:C2","165.165.79.1":"8A:BC:E3:FA"};
+while True:
+ ip=c.recv(1024).decode()
+ try:
+ c.send(address[ip].encode())
+ except KeyError:
+ c.send("Not Found".encode()) 
+
 
 SERVER:
 # Developed by : SAKTHI PRIYA D
@@ -56,12 +57,17 @@ print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 
-OUTPUT:
-CLIENT:
-![1a](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/28af897b-055b-46ab-bf05-b7dcd5b8d5aa)
 
-SERVER:
-![1b](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/40fb2b64-ad30-4078-a3d9-8faa93f7d6b5)
+## OUTPUT:
+## CLIENT:
+![image](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/d54eaa7e-bf4c-46b0-8fd0-e2bb85b33670)
+
+
+
+## SERVER:
+![image](https://github.com/sakthipriyadhanusu/19CS406-EX-1/assets/119393194/2dad036f-edc6-4e0c-930c-2f7c1c5fb30b)
+
+
 
 RESULT:
 Thus, the program to implement socket programming date and time display from client to

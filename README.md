@@ -35,6 +35,7 @@ Client:
 
 PROGRAM :
 CLIENT:
+```
 Developed by : SAKTHI PRIYA D
 Register Number : 212222040139
 import socket
@@ -49,9 +50,11 @@ while True:
  c.send(address[ip].encode())
  except KeyError:
  c.send("Not Found".encode()) 
+ ```
 
 
 SERVER:
+```
 Developed by : SAKTHI PRIYA D
  Register Number : 212222040139
 import socket
@@ -60,6 +63,7 @@ s.connect(('localhost',8000))
 print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
+```
 
 
 ## OUTPUT:
